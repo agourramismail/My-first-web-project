@@ -7,12 +7,12 @@ require_once 'includes/signup_view.inc.php';
 require_once 'includes/config_session_inc.php';
 
 include ('header.php');
-include ('footer.php');
+
 
 
 
 ?>
-
+<br><br>
 <div class="container my-5">
         <div class="row">
         <form action="includes/signup.inc.php" method="POST">
@@ -33,6 +33,7 @@ include ('footer.php');
 
 <?php
 check_signup_errors(); 
+include ('footer.php');
 ?>          
         </div>
     </div>
