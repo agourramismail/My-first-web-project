@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                 session_id($sessionid);
 
                 $_SESSION["user_id"] = $result["id"];
-                $_SESSION["user_username"] = htmlspecialchars($result["username"]) ;
+                $_SESSION["user_username"] = htmlspecialchars($result["nom"]) ;
                 $_SESSION["last_regeneration"] = time();
                 
                 header("location: ../index.php?loginn=success");
