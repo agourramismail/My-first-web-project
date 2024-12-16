@@ -16,3 +16,16 @@ function check_signup_errors (){
     }
 }
  ?>
+ <doctype html>
+    <html>
+        <head>
+            <style>
+                .form-error{
+                    color: red;
+                }
+            </style>
+        </head>
+        <body>
+            
+        </body>
+    </html>
