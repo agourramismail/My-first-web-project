@@ -12,6 +12,9 @@ session_set_cookie_params([
 
 session_start();
 
+// Debugging - check session variables
+var_dump($_SESSION);
+
 if (isset($_SESSION["user_id"])) {
     if (!isset($_SESSION["last_regeneration"])) {
         regenerate_session_id_loggedin();
@@ -37,6 +40,9 @@ function regenerate_session_id_loggedin() {
         session_regenerate_id(true);
         $_SESSION["last_regeneration"] = time();
     } else {
+        // Debugging - check the session state
+        echo "Session variable 'user_id' is not set!<br>";
+        var_dump($_SESSION);  // Check the session data
         die("Invalid session state. Please log in again.");
     }
 }
