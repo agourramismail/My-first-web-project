@@ -27,7 +27,9 @@ require 'controls/dashboard_contr.inc.php';
       <td><?= htmlspecialchars($user['nom']) ?></td>
       <td><?= htmlspecialchars($user['email']) ?></td>
       <td><?= htmlspecialchars($user['pwd']) ?></td>
-      <td><a href="update_dashboard.php" class="btn btn-primary btn-sm">Edit</a></td>
+      <td><a href="update_dashboard.php?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-outline-dark btn-md">Edit</a>
+          <a href="delete_dashboard.php?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-outline-danger btn-md">Delete</a>
+      </td>
     </tr>
     <?php }?>
   </tbody>
