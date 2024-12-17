@@ -12,11 +12,8 @@ session_set_cookie_params([
 
 session_start();
 
-// Debugging - check session variables
-var_dump($_SESSION);
-
-if (isset($_SESSION["user_id"])) {
-    if (!isset($_SESSION["last_regeneration"])) {
+if(isset($_SESSION["user_id"])){
+    if(!isset($_SESSION["last_regeneration"])){
         regenerate_session_id_loggedin();
     } else {
         $interval = 60 * 30;
@@ -35,19 +32,18 @@ if (isset($_SESSION["user_id"])) {
     }
 }
 
-function regenerate_session_id_loggedin() {
-    if (isset($_SESSION["user_id"])) {
-        session_regenerate_id(true);
-        $_SESSION["last_regeneration"] = time();
-    } else {
-        // Debugging - check the session state
-        echo "Session variable 'user_id' is not set!<br>";
-        var_dump($_SESSION);  // Check the session data
-        die("Invalid session state. Please log in again.");
-    }
-}
+function regenerate_session_id_loggedin(){
 
-function regenerate_session_id() {
+    session_regenerate_id(true);
+    $user_id = $_SESSION["user_id"];
+    $newSessionId= session_create_id();
+    $sessionid = $newSessionId . "_" . $user_id["id"];
+    session_id($sessionid);
+
+    $_SESSION["last_regeneration"] = time();
+}
+function regenerate_session_id(){
+
     session_regenerate_id(true);
     $_SESSION["last_regeneration"] = time();
 }
