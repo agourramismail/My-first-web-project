@@ -3,15 +3,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); ?>
 <?php 
-require_once 'includes/signup_view.inc.php';
+require_once 'views/signup_view.inc.php';
 require_once 'includes/config_session_inc.php';
-require_once 'includes/login_view.inc.php';
+require_once 'views/login_view.inc.php';
 
 include ('header.php');
-
-
-
-
 ?>
 
 <!doctype html>
@@ -41,14 +37,9 @@ include ('header.php');
         <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" >
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-
-
-         
+        </form>         
         </div>
-    </div>
+</div>
 <div class="container my-5">
         <div class="row">
         <form action="includes/login.inc.php" method="POST">

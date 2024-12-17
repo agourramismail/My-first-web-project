@@ -98,6 +98,9 @@
         width: 100%;
         height: 100%;
       }
+      .username{
+        color:white;
+      }
     </style>
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -118,10 +121,22 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-        <button type="button" class="btn btn-primary">Sign-up</button>
-        <button type="button" class="btn btn-danger">Sign-in</button>
+        <?php
+         if (isset($_SESSION["user_username"])) { ?>
+          <div class="profile-container">
+            <img src="img/profile-icon.png" alt="Profile Icon" class="profile-icon">
+            <span class="username">Welcome <?php echo $_SESSION["user_username"]; ?></span>
+            <button type="button" class="btn btn-warning" onclick="window.location.href='dashboard.php'">dashbord</button>
+            <button type="button" class="btn btn-danger" onclick="window.location.href='includes/logout.inc.php'">Bye</button>
+            
+          </div>
+
+         <?php }else{ ?>
+          <form class="d-flex" role="search">
+        <button  type="button" class="btn btn-primary" onclick="window.location.href='index.php'">Sign-up</button>
+        <button  type="button" class="btn btn-danger" onclick="window.location.href='index.php'">Sign-in</button>
         </form>
+         <?php } ?> 
       </div>
     </div>
   </nav>

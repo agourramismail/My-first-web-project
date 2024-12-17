@@ -1,12 +1,16 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $username = $_POST['nom'];
     $password = $_POST['pwd'];
     try {
 
-        require_once 'dbh.inc.php';
-        require_once 'login_model.inc.php';
-        require_once 'login.contr.inc.php';
+        require_once 'dbh.inc.php';  
+        require_once '../models/login_model.inc.php';  
+        require_once '../controls/login_contr.inc.php'; 
         
                 // gestion dial les erreurs
                 $errors = [];
@@ -37,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                 session_id($sessionid);
 
                 $_SESSION["user_id"] = $result["id"];
-                $_SESSION["user_username"] = htmlspecialchars($result["username"]) ;
+                $_SESSION["user_username"] = htmlspecialchars($result["nom"]) ;
                 $_SESSION["last_regeneration"] = time();
                 
-                header("location: ../index.php?loginn=success");
+                header("location: ../acceuil.php?loginn=success");
                 $pdo=null;
                 $statement=null;
 
