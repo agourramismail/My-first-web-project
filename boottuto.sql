@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 01 déc. 2024 à 15:51
+-- Généré le : jeu. 19 déc. 2024 à 14:58
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.3.1
 
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `cars`
+--
+
+CREATE TABLE `cars` (
+  `id` int(11) NOT NULL,
+  `car_name` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -40,15 +54,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nom`, `email`, `pwd`, `created_at`) VALUES
-(1, 'simo', 'pinitonft60@gmail.com', '$2y$10$dCgR12pe53yr7ZvTiuFvqOdLW9N.PI2imcLBtFRxnwZLwEDTQNfey', '2024-11-28 22:55:51'),
-(2, 'ismail', 'pinitosocial60@gmail.com', '$2y$10$3XLGxqQY8I.0TCH7IyEY5eY5IRaweqp6ItttveVR3kHy8ztEYt8lO', '2024-11-28 22:58:27'),
-(3, 'younes', 'younesagourram12@gmail.com', '$2y$10$Kr88PlnCyMUDYMnII73Zru3HJFxFD.poBDmKUtkAvEwaxPBGzXts6', '2024-11-28 23:04:26'),
-(4, 'younesgg', 'younesagourram13@gmail.com', '$2y$10$7mkykq6doSRbTCtDgXuDTOC2OK0sxYesYb2euCKe3ZRSdWqOeEndu', '2024-11-28 23:05:11'),
-(5, 'ana', 'dqdqdqljdjqidj@gmail.com', '$2y$10$cI5eQT8ouLQx6wC/jlCDwuLBsZp3pa7xO7xCLWL4CoZ1z4eO9QUky', '2024-12-01 15:41:46');
+(4, 'younesgg', 'younesagourram13@gmail.com', '$2y$10$rLPHWHO4volHXLZvWv/esOrDdTh6ky3QNZkybRDgSEBWNpa51rrQi', '2024-11-28 23:05:11'),
+(7, 'simo6', 'simo6@gmail.com', '$2y$10$.s0Ax/0ARbrifgHvV4lvJOTxTCNvPZkBGsJh3lMfGpezT2dNLC0s.', '2024-12-19 10:01:29');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `cars`
+--
+ALTER TABLE `cars`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `users`
@@ -62,10 +79,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `cars`
+--
+ALTER TABLE `cars`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
