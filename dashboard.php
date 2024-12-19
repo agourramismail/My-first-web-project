@@ -32,6 +32,32 @@ require 'controls/dashboard_contr.inc.php';
       </td>
     </tr>
     <?php }?>
+
   </tbody>
 </table>
-</div>
+    </div>
+    <br> <br>
+    <p class="fs-4 text-center">Ajouter Une voiture ici: <a href="add_car.php" class="btn btn-outline-success">Ajouter</a></p>
+    <div class="container-xxl">
+    <table class="table">
+  <thead class="table-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nom De Voiture</th>
+      <th scope="col">Model</th>
+      <th scope="col">Price</th>
+      <th scope="col">Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
