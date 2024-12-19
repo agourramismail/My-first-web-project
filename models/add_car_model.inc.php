@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 function add_car (object $pdo,string $car_name,string $model,int $price,string$photo ){
-    $query="INSERT INTO cars (car_name,model,price,photo) VALUES(:car_name, :model, :price, :pwd) ";
+    $query="INSERT INTO cars (car_name,model,price,photo) VALUES(:car_name, :model, :price, :photo) ";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':car_name', $car_name);
     $stmt->bindParam(':model',$model);

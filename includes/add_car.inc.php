@@ -8,12 +8,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $car_name= $_POST['car_name'];
     $model= $_POST['model'];
     $price= $_POST['price'];
-    $photo= $photo = $_FILES['photo']['name'];
+    $photo= $photo = $_FILES['photo'];
     try {
         require_once 'dbh.inc.php';
-        require_once 'controls/add_car_contr.inc.php';
-        require_once 'models/add_car_model.inc.php';
-        require_once 'add_car_view.inc.php';
+        require_once '../controls/add_car_contr.inc.php';
+        require_once '../models/add_car_model.inc.php';
+        require_once '../views/add_car_view.inc.php';
 
         $errors=[];
 
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $car= add_car($pdo,$car_name,$model,$price,$photo);
         if($car){
             echo"car added!";
-            header("Location: dashboard.php");
+            header("Location: ../dashboard.php");
             exit();
         }else{
             echo"car not added";
