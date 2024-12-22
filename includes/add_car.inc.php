@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(is_input_empty($car_name,$model,$price,$photo) !== false){
             $errors['empty_imput']='Please fill in all fields';
         }
+        upload_file($targetdir,$photo,$targetfile);
 
 
         require_once 'config_session_inc.php';
@@ -28,6 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             header("location:..dashboard.php");
             exit();
         }
+
 
         $addcar= add_car($pdo,$car_name,$model,$price,$photo);
         if($addcar){

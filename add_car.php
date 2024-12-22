@@ -16,7 +16,7 @@ include 'dashboard.php';
     </div>
     <div class="mb-3">
         <label for="price" class="form-label">Prix</label>
-        <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Entrez le prix en dollars" required>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Entrez le prix" required>
     </div>
     <div class="mb-3">
         <label for="photo" class="form-label">Photo de la Voiture</label>
