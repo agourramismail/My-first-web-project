@@ -29,8 +29,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             exit();
         }
 
-        $car= add_car($pdo,$car_name,$model,$price,$photo);
-        if($car){
+        $addcar= add_car($pdo,$car_name,$model,$price,$photo);
+        if($addcar){
             echo"car added!";
             header("Location: ../dashboard.php");
             exit();
