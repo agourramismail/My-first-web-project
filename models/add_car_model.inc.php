@@ -7,7 +7,7 @@ function add_car (object $pdo,string $car_name,string $model,int $price,string $
     $stmt->bindParam(':car_name', $car_name);
     $stmt->bindParam(':model',$model);
     $stmt->bindParam(':price',$price);
-    $stmt->bindParam('photo',$photo);
+    $stmt->bindParam(':photo',$photo);
 
     return $stmt-> execute();
 }
