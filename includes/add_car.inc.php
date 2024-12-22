@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $car_name= $_POST['car_name'];
     $model= $_POST['model'];
     $price= $_POST['price'];
-    $photo= $photo = $_FILES['photo'];
+    $photo = $_FILES['photo']['name'];
     try {
         require_once 'dbh.inc.php';
         require_once '../controls/add_car_contr.inc.php';
