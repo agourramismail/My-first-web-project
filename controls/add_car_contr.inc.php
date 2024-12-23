@@ -7,7 +7,6 @@ function upload_file($targetdir,$photo,$targetfile){
     $targetdir = 'uploads/';
     $photo = $_FILES['photo']['name'];
     $targetfile = $targetdir . basename($photo);
-    $uploaddr=move_uploaded_file($_FILES['photo']['tmp_name'], $targetfile);
-    return $uploaddr;
+    return move_uploaded_file($_FILES['photo']['tmp_name'], $targetfile);;
 }
 ?>
