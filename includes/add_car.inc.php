@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $car_name= $_POST['car_name'];
     $model= $_POST['model'];
     $price= $_POST['price'];
-    $photo = $_FILES['photo']['name'];
+    $photo = $_FILES['photo'];
     try {
         require_once 'dbh.inc.php';
         require_once '../controls/add_car_contr.inc.php';
@@ -20,7 +20,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(is_input_empty($car_name,$model,$price,$photo) !== false){
             $errors['empty_imput']='Please fill in all fields';
         }
-        upload_file($targetdir,$photo,$targetfile);
+        
+        $targetdir = "../uploads/";
+        if (!$errors) {
+            $uniquePhotoName = upload_file($targetdir, $photo);
+        }
 
 
         require_once 'config_session_inc.php';
@@ -31,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }
 
 
-        $addcar= add_car($pdo,$car_name,$model,$price,$photo);
+        $addcar= add_car($pdo,$car_name,$model,$price,$uniquePhotoName);
         if($addcar){
             echo"car added!";
             header("Location: ../dashboard.php");

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 function get_all_users(object $pdo):array{
-    $query="SELECT * FROM users";
+    $query="SELECT * FROM users WHERE active = 1";
     $stmt=$pdo-> prepare($query);
     $stmt ->execute();
 
@@ -37,7 +37,7 @@ function update_users(object $pdo, int $id, string $username, string $email, str
 }
 
 function delete_user(object $pdo, int $id): bool {
-    $query = "DELETE FROM users WHERE id = :id";
+    $query = "UPDATE users SET active = 0 WHERE id = :id";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 
