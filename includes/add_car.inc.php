@@ -22,9 +22,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }
         
         $targetdir = "../uploads/";
-        if (!$errors) {
             $uniquePhotoName = upload_file($targetdir, $photo);
-        }
 
 
         require_once 'config_session_inc.php';
