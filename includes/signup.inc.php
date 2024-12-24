@@ -43,12 +43,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-
-        $query = "INSERT INTO users (nom, email, pwd) VALUES (:nom, :email, :pwd)";
+        $active = 1;
+        $type = 'user';
+        $query = "INSERT INTO users (nom, email, pwd, type, active) VALUES (:nom, :email, :pwd, :type, :active)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':nom', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':pwd', $hashedPassword);
+        $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':active', $active);
 
         $stmt->execute();
 
