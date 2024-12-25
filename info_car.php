@@ -1,8 +1,11 @@
 <?php include 'header.php';
- include 'controls/select_car_contr.inc.php';
  include 'includes/dbh.inc.php';
  require_once 'includes/config_session_inc.php';
-
+ require 'models/info_car_model.php';
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $car = get_car_info($pdo,$id);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,25 +13,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .car-info{
+            color: red;
+            font-size: larger;
+            font-weight: bolder;
+        }
+        .car-info-border{
+            border-style: solid;
+            border-color: black;
+            border-radius: 100px;
+            padding: 40px;
+            margin-right: 80px;
+        }
+        .next-btn{
+            width: 100px;
+        }
+    </style>
 </head>
 <body style="margin-top: 200px;">
-    <?php ($cars= $car) ?>
-<div class="container py-5">
-        <h2 class="text-center"><?= htmlspecialchars($car['car_name']) ?> </h2>
-        <form action="process_buy_car.php" method="POST" class="mt-4">
-            <!-- User Information -->
-            <div class="mb-3">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" name="name" id="name" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="text" name="phone" id="phone" class="form-control" required>
-            </div>
+<div class="container ">
+    <div class="row car-info-border">
+
+        <div class="col car-info-border">
+        <h2 class="text-center">You Are Ordering : <span class="car-info"><?= htmlspecialchars($car['car_name']) ?></span> </h2>
+        <div class="text-center">
+            <img src="uploads/<?= htmlspecialchars($car['photo']) ?>" alt="" class="bd-placeholder-img rounded-circle " width="400" height="200">
+        </div>
+        <h2 class="text-center">MODEL: <span class="car-info"><?= htmlspecialchars($car['model']) ?></span></h2>
+        <h2 class="text-center">Prix/Jour: <span class="car-info"><?= htmlspecialchars($car['price']) ?></span> </h2>
+        <p class="text-center"><a class="btn btn-outline-warning next-btn "  href="form_car.php?id=<?= htmlspecialchars($car['id']) ?>"">Next STEP</a></p>
+        </div>
+    </div>
+
     <?php include 'footer.php'?>
 </body>
 </html>
