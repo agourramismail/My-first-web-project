@@ -1,4 +1,5 @@
 <?php
+session_start();
  include 'header.php'; 
  include 'controls/select_car_contr.inc.php';
  include 'includes/dbh.inc.php';
