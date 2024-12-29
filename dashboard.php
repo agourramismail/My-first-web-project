@@ -4,16 +4,27 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once 'includes/config_session_inc.php';
 include 'header.php';
-include 'footer.php';
 include 'includes/dbh.inc.php';
 require_once 'models/dashboard_model.inc.php'; 
 require 'controls/dashboard_contr.inc.php';
 require 'controls/select_car_contr.inc.php';
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="margin-top: 110px;">
+<div>
+<?php 
+include 'sidebar.php';
+?>
 
-<!-- Table Users -->
-<div class="container">
-<table class="table" style="margin-top: 150px;" >
+  <!-- Table Users -->
+  <div class="container">
+<table class="table" >
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -41,37 +52,14 @@ require 'controls/select_car_contr.inc.php';
   </tbody>
 </table>
     </div>
-
-
-    <br> <br>
-
-    <!-- Add Cars -->
-    <p class="fs-4 text-center">Ajouter Une voiture ici: <a href="add_car.php" class="btn btn-outline-success">Ajouter</a></p>
-
-    <!-- Table Cars -->
-    <div class="container mt-5">
-    <h2>Liste des Voitures</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Modèle</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Photo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($cars as $car): ?>
-                <tr>
-                    <th scope="row"><?= htmlspecialchars($car['id']) ?></th>
-                    <td><?= htmlspecialchars($car['car_name']) ?></td>
-                    <td><?= htmlspecialchars($car['model']) ?></td>
-                    <td><?= htmlspecialchars($car['price']) ?></td>
-                    <td><img src="uploads/<?= htmlspecialchars($car['photo']) ?>" alt="Photo de la voiture" style="width:100px; height:auto;"></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
 </div>
+
+
+<?php 
+include 'footer.php';
+?>
+</body>
+</html>
+
+
 

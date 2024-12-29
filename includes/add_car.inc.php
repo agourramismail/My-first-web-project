@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         require_once 'config_session_inc.php';
         if($errors){
             $_SESSION["errors_add_car"]= $errors;
-            header("location:..dashboard.php");
+            header("location:../dashboard.php");
             exit();
         }
 
