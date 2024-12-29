@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once 'includes/config_session_inc.php';
+include 'includes/config_session_inc.php';
 include 'header.php';
 include 'includes/dbh.inc.php';
 require_once 'models/dashboard_model.inc.php'; 
@@ -16,15 +16,17 @@ require 'controls/select_car_contr.inc.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body style="margin-top: 110px;">
-<div>
-<?php 
-include 'sidebar.php';
-?>
+<body style="margin-top: 50px;">
 
   <!-- Table Users -->
-  <div class="container">
-<table class="table" >
+  <div class="row">
+    <div class="col-sm-4">
+    <?php 
+include 'sidebar.php';
+?>
+    </div>
+    <div class="col-sm-8">
+    <table class="table" >
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -52,7 +54,8 @@ include 'sidebar.php';
   </tbody>
 </table>
     </div>
-</div>
+  </div>
+
 
 
 <?php 

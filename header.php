@@ -101,6 +101,9 @@
       .username{
         color:white;
       }
+      .navbar{
+        height: 60px;
+      }
     </style>
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">

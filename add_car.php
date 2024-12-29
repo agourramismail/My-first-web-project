@@ -1,7 +1,6 @@
 <?php 
 include 'header.php';
 include 'includes/add_car.inc.php';
-include 'includes/config_session_inc.php';
 include 'dashboard.php';
 ?>
 

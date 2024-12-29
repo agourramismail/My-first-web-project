@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+include 'includes/config_session_inc.php';
 require_once 'includes/dbh.inc.php';
 require_once 'models/dashboard_model.inc.php';
 include 'dashboard.php';
