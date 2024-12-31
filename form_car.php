@@ -27,18 +27,11 @@ if(isset($_GET['id'])){
     </style>
 </head>
 <body style="margin-top: 200px;">
+<h2 class="text-center">Client : <span class="car-info"><?= htmlspecialchars($_SESSION['user_username']) ?></span> </h2>
 <h2 class="text-center">You Are Ordering : <span class="car-info"><?= htmlspecialchars($car['car_name']) ?></span> </h2>
 
 <div class="col car-info-border container-xl">
         <form action="includes/form_car.inc.php" method="POST" class="mt-4">
-            <div class="mb-3">
-                <label for="nom" class="form-label">Your Name</label>
-                <input type="text" name="nom" id="nom" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" required>
-            </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone Number</label>
                 <input type="text" name="phone" id="phone" class="form-control" required>

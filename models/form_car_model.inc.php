@@ -1,11 +1,10 @@
 <?php
 declare(strict_types=1);
 
-function formpost(object $pdo,string $nom,string $email,string $phone){
-    $query="INSERT INTO commande (nom,email,phone) VALUES (:nom,:email,:phone)";
+function formpost(object $pdo,string $phone){
+    $query="INSERT INTO orders (phone) VALUES (:phone)";
     $stmt=$pdo->prepare($query);
-    $stmt->bindParam(':nom',$nom);
-    $stmt->bindParam(':email',$email);
+
     $stmt->bindParam(':phone',$phone);
 
 
