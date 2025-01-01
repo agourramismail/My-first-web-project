@@ -41,10 +41,10 @@ include 'sidebar.php';
     <?php foreach ($orders as $order){ ?>
     <tr>
       <th scope="row"><?= htmlspecialchars($order['order_id']) ?></th>
-      <td><?= htmlspecialchars($order['user_nom']) ?></td>
-      <td><?= htmlspecialchars($order['user_email']) ?></td>
+      <td><?= htmlspecialchars($_SESSION['user_username']) ?></td>
+      <td><?= htmlspecialchars($_SESSION['user_email']) ?></td>
       <td><?= htmlspecialchars($order['user_phone']) ?></td>
-      <td><?= htmlspecialchars($order['orders_date']) ?></td>
+      <td><?= htmlspecialchars($order['order_date']) ?></td>
     </tr>
     <?php }?>
 
