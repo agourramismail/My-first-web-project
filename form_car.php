@@ -8,8 +8,9 @@ require_once 'includes/config_session_inc.php';
 require 'models/info_car_model.php';
 require 'includes/form_car.inc.php';
 if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $car = get_car_info($pdo,$id);
+    $carid = $_GET['id'];
+    $_SESSION['car_id']= $_GET['id'];
+    $car = get_car_info($pdo,$carid);
 }
 ?>
 <!DOCTYPE html>
@@ -27,6 +28,7 @@ if(isset($_GET['id'])){
     </style>
 </head>
 <body style="margin-top: 200px;">
+<h2><?echo $_SESSION['car_id'] ?></h2>
 <h2 class="text-center">Client : <span class="car-info"><?= htmlspecialchars($_SESSION['user_username']) ?></span> </h2>
 <h2 class="text-center">You Are Ordering : <span class="car-info"><?= htmlspecialchars($car['car_name']) ?></span> </h2>
 <h2 class="text-center">You Are Ordering : <span class="car-info"><?= htmlspecialchars($car['id']) ?></span> </h2>

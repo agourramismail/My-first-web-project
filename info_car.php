@@ -1,10 +1,13 @@
-<?php include 'header.php';
+<?php
+session_start();
+ include 'header.php';
  include 'includes/dbh.inc.php';
- require_once 'includes/config_session_inc.php';
+ include 'includes/config_session_inc.php';
  require 'models/info_car_model.php';
 if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $car = get_car_info($pdo,$id);
+    $carid = $_GET['id'];
+    $_SESSION['car_id']= $_GET['id'];
+    $car = get_car_info($pdo,$carid);
 }
 ?>
 <!DOCTYPE html>

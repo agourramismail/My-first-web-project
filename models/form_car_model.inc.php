@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-function formpost(object $pdo,string $phone,int $user_id){
-    $query="INSERT INTO orders (user_id, phone, order_date) VALUES (:user_id,:phone, NOW())";
+function formpost(object $pdo,int $userid,int $carid,string $phone){
+    $query="INSERT INTO orders (userid,carid,phone, orderdate) VALUES (:userid,:carid,:phone, NOW())";
     $stmt=$pdo->prepare($query);
 
-    $stmt->bindParam(':user_id',$user_id);
     $stmt->bindParam(':phone',$phone);
+    $stmt->bindParam(':userid', $userid);
+    $stmt->bindParam(':carid', $carid);
 
 
     return $stmt->execute();

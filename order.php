@@ -17,7 +17,7 @@ $orders= get_all_orders($pdo);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body style="margin-top: 50px;">
+<body style="margin-top: 100px;">
 
   <!-- Table Users -->
   <div class="row">
@@ -31,8 +31,8 @@ include 'sidebar.php';
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Username</th>
-      <th scope="col">email</th>
+      <th scope="col">id user</th>
+      <th scope="col">id car</th>
       <th scope="col">phone</th>
       <th scope="col">date</th>
     </tr>
@@ -40,11 +40,11 @@ include 'sidebar.php';
   <tbody>
     <?php foreach ($orders as $order){ ?>
     <tr>
-      <th scope="row"><?= htmlspecialchars($order['id']) ?></th>
-      <td><?= htmlspecialchars($_SESSION['user_username']) ?></td>
+      <th scope="row"><?= htmlspecialchars($order['order_id']) ?></th>
+      <td><?= htmlspecialchars($order['username']) ?></td>
       <td><?= htmlspecialchars($order['car_name']) ?></td>
       <td><?= htmlspecialchars($order['phone']) ?></td>
-      <td><?= htmlspecialchars($order['order_date']) ?></td>
+      <td><?= htmlspecialchars($order['orderdate']) ?></td>
     </tr>
     <?php }?>
 
