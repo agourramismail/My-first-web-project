@@ -104,6 +104,9 @@
       .navbar{
         height: 60px;
       }
+      .profile-icon{
+        width: 50px;
+      }
     </style>
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -126,11 +129,11 @@
         </ul>
         <?php
          if (isset($_SESSION["user_username"])) { ?>
-          <div class="profile-container">
-            <img src="img/profile-icon.png" alt="Profile Icon" class="profile-icon">
+          < class="profile-container">
             <span class="username">Welcome <?php echo $_SESSION["user_username"]; ?></span>
             <button type="button" class="btn btn-warning" onclick="window.location.href='dashboard.php'">dashbord</button>
             <button type="button" class="btn btn-danger" onclick="window.location.href='includes/logout.inc.php'">Bye</button>
+            <img src="img/manage_accounts_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Profile Icon" class="profile-icon dropdown-toggle">
             
           </div>
 

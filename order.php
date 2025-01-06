@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 include 'includes/config_session_inc.php';
 include 'includes/dbh.inc.php';
 include 'models/select_order_model.inc.php';
-include 'header.php';
 
 $orders= get_all_orders($pdo);
 
@@ -17,14 +16,13 @@ $orders= get_all_orders($pdo);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body style="margin-top: 100px;">
+<?php include 'header.php'; ?>
+<body style="padding-top: 60px;">
 
   <!-- Table Users -->
   <div class="row">
     <div class="col-sm-4">
-    <?php 
-include 'sidebar.php';
-?>
+    <?php include 'sidebar.php';?>
     </div>
     <div class="col-sm-8">
     <table class="table" >

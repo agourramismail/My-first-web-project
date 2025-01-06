@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -98,7 +98,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="sidebars.css" rel="stylesheet">
+    <link href="css/sidebars.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -178,29 +178,30 @@
 </svg>
 
 <main class="d-flex flex-nowrap">
+  <h1 class="visually-hidden">Sidebars examples</h1>
 
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-4">Sidebar</span>
+      <span class="fs-4">test</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="dashboard.php" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-          cliens
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href=""/></svg>
+          Users
         </a>
       </li>
       <li>
         <a href="car_dash.php" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-          cars
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href=""/></svg>
+          Voitures
         </a>
       </li>
       <li>
         <a href="order.php" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href=""/></svg>
           Orders
         </a>
       </li>
